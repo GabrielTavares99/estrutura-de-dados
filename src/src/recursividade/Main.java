@@ -10,8 +10,8 @@ public class Main {
             System.out.print(algoritmosRecursivos.fibonacci(i) + " ");
         }
 
-        System.out.println("\nAlgoritmo B: "+algoritmosRecursivos.metodoB(5,1 ));
+        System.out.println("\nAlgoritmo B: " + algoritmosRecursivos.metodoB(5, 1));
 
-        System.out.println("MDC: "+ algoritmosRecursivos.mdc(250, 150));
+        System.out.println("MDC: " + algoritmosRecursivos.mdc(250, 150));
     }
 }
