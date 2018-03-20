@@ -2,7 +2,7 @@ package listas.model;
 
 public class ListaInteiros {
 
-    private int tamanho;
+    private int tamanho = 0;
     private int[] vetor;
 
     public ListaInteiros(int tamanho) {
@@ -44,7 +44,8 @@ public class ListaInteiros {
 
     public void adicionaFinal(int num) {
         if (!cheia()) {
-            vetor[tamanho - 1] = num;
+            vetor[tamanho] = num;
+            tamanho++;
         } else {
             System.out.println("Error: lista cheia!");
         }
@@ -73,10 +74,12 @@ public class ListaInteiros {
     }
 
     public int removeFinal() {
-        int num = 0;
+        int num = -1;
         if (!vazia()) {
             num = vetor[tamanho - 1];
             tamanho--;
+        }else {
+            System.out.println("ERRO! Lista Vazia");
         }
         return num;
     }
