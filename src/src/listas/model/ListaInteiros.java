@@ -14,10 +14,12 @@ public class ListaInteiros {
             puxaElementosDireita(vetor);
             vetor[0] = num;
             tamanho++;
+        }else {
+            System.out.println("Error: lista cheia");
         }
     }
 
-    public void puxaElementosEsquerda(int vetor[]) {
+    private void puxaElementosEsquerda(int vetor[]) {
         if (!vazia()) {
             for (int i = 0; i < tamanho - 1; i++) {
                 vetor[i] = vetor[i + 1];
@@ -25,7 +27,7 @@ public class ListaInteiros {
         }
     }
 
-    public void puxaElementosDireita(int vetor[]) {
+    private void puxaElementosDireita(int vetor[]) {
         if (!vazia())
             for (int i = tamanho - 1; i >= 0; i--) {
                 vetor[i + 1] = vetor[i];
@@ -42,34 +44,52 @@ public class ListaInteiros {
 
     public void adicionaFinal(int num) {
         if (!cheia()) {
-            vetor[tamanho] = num;
-            tamanho++;
+            vetor[tamanho - 1] = num;
         } else {
             System.out.println("Error: lista cheia!");
         }
     }
 
     public void adiciona(int num, int posicao) {
-
+        if (posicao > tamanho - 1) {
+            System.out.println("Erro: posição fora do intervalo");
+        } else {
+            vetor[posicao] = num;
+            tamanho++;
+        }
     }
 
     public int removeInicio() {
-        int valoreRemovido = 0;
+        int valoreRemovido = -1;
         if (!vazia()) {
-            puxaElementosEsquerda(vetor);
             valoreRemovido = vetor[0];
+            puxaElementosEsquerda(vetor);
             tamanho--;
+        }else {
+            System.out.println("Erro: Lista vazia.");
         }
 
         return valoreRemovido;
     }
 
     public int removeFinal() {
-        return 0;
+        int num = 0;
+        if (!vazia()) {
+            num = vetor[tamanho - 1];
+            tamanho--;
+        }
+        return num;
     }
 
     public int remove(int posicao) {
-        return 0;
+        int numRemovido = 0;
+        if (posicao > tamanho-1)
+            System.out.println("Erro: posição fora do intervalo");
+        else {
+            numRemovido = vetor[posicao];
+            tamanho--;
+        }
+        return numRemovido;
     }
 
     public int obtemPrimeiro() {
