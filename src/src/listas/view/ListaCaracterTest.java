@@ -1,6 +1,5 @@
 package listas.view;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import listas.model.ListaCaracter;
 
 public class ListaCaracterTest {
@@ -26,11 +25,20 @@ public class ListaCaracterTest {
 //        System.out.println(conteudoConcatenado);
         // TODO: 24/03/18 PERGUNTAR retorna -1 quando não conseguir obter valor
         // TODO: 24/03/18 gerar e retornar uma String codificada somando um em cada caractere.
-        listaCaracter.adicionaInicio('O');
-        listaCaracter.adicionaInicio('S');
-        listaCaracter.adicionaInicio('D');
-        listaCaracter.adicionaInicio('O');
-        System.out.println(String.format("%s é um palíndromo? %b", listaCaracter.concatenarConteudo(), listaCaracter.isPalindromo()));
+//        listaCaracter.adicionaInicio('O');
+//        listaCaracter.adicionaInicio('S');
+//        listaCaracter.adicionaInicio('D');
+//        listaCaracter.adicionaInicio('O');
+//        System.out.println(String.format("%s é um palíndromo? %b", listaCaracter.concatenarConteudo(), listaCaracter.isPalindromo()));
+
+        // TODO: 25/03/18 PODE COLCOR EM POSIÇÃO QUANDO A LISTA É VAZIA?
+        listaCaracter.adicionaInicio('G');
+        listaCaracter.adicionaFinal('O');
+        print();
+        listaCaracter.adiciona('F', 1);
+        listaCaracter.adiciona('C', 2);
+        print();
+        listaCaracter.remove(2);
         print();
 
     }

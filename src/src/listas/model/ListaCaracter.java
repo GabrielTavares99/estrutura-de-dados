@@ -52,11 +52,10 @@ public class ListaCaracter {
     }
 
     public void adiciona(char caracter, int posicao) {
-        if (posicao > tamanho - 1) {
+        if (posicao < 1 || posicao > tamanho) {
             System.out.println("Erro: posição fora do intervalo");
         } else {
-            vetor[posicao] = caracter;
-            tamanho++;
+            vetor[posicao-1] = caracter;
         }
     }
 
@@ -86,10 +85,10 @@ public class ListaCaracter {
 
     public int remove(int posicao) {
         int caracterRemovido = 0;
-        if (posicao > tamanho - 1)
+        if (posicao > tamanho)
             System.out.println("Erro: posição fora do intervalo");
         else {
-            caracterRemovido = vetor[posicao];
+            caracterRemovido = vetor[posicao-1];
             tamanho--;
         }
         return caracterRemovido;

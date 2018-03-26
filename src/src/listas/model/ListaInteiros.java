@@ -51,12 +51,11 @@ public class ListaInteiros {
         }
     }
 
-    public void adiciona(int num, int posicao) {
-        if (posicao > tamanho - 1) {
+    public void adicionaPosicao(int num, int posicao) {
+        if (posicao > tamanho || posicao < 1) {
             System.out.println("Erro: posição fora do intervalo");
         } else {
-            vetor[posicao] = num;
-            tamanho++;
+            vetor[posicao-1] = num;
         }
     }
 
@@ -84,13 +83,16 @@ public class ListaInteiros {
         return num;
     }
 
-    public int remove(int posicao) {
+    public int removePosicao(int posicao) {
         int numRemovido = 0;
-        if (posicao > tamanho-1)
+        if (posicao > tamanho || posicao < 1)
             System.out.println("Erro: posição fora do intervalo");
         else {
-            numRemovido = vetor[posicao];
+            numRemovido = vetor[posicao-1];
             tamanho--;
+            for (int i = posicao-1; i < tamanho; i++){
+                vetor[i] = vetor[posicao];
+            }
         }
         return numRemovido;
     }

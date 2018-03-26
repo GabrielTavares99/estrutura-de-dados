@@ -5,6 +5,7 @@ import listas.model.ListaReais;
 
 public class ListaReaisTest {
     static ListaReais listaReais;
+
     public static void main(String[] args) {
 
 //        LISTA II
@@ -29,6 +30,8 @@ public class ListaReaisTest {
         System.out.println(valorConcatenado);
     }
 
+    // TODO: 25/03/18  
+    
     private static void print() {
         System.out.println(listaReais);
     }
