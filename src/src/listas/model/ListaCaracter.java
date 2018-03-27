@@ -55,7 +55,7 @@ public class ListaCaracter {
         if (posicao < 1 || posicao > tamanho) {
             System.out.println("Erro: posição fora do intervalo");
         } else {
-            vetor[posicao-1] = caracter;
+            vetor[posicao - 1] = caracter;
         }
     }
 
@@ -88,7 +88,7 @@ public class ListaCaracter {
         if (posicao > tamanho)
             System.out.println("Erro: posição fora do intervalo");
         else {
-            caracterRemovido = vetor[posicao-1];
+            caracterRemovido = vetor[posicao - 1];
             tamanho--;
         }
         return caracterRemovido;
@@ -130,12 +130,32 @@ public class ListaCaracter {
         return stringBuilder.toString();
     }
 
-    public boolean isPalindromo(){
+    public boolean isPalindromo() {
         String horario = concatenarConteudo();
         StringBuilder antiHorario = new StringBuilder();
-        for (int i = tamanho-1; i >= 0; i--) {
+        for (int i = tamanho - 1; i >= 0; i--) {
             antiHorario.append(vetor[i]);
         }
         return horario.equals(antiHorario.toString());
+    }
+
+    public String concatenarSomar() {
+
+        StringBuilder stringBuilder = new StringBuilder();
+//        char c = 'c';
+//
+//        int novo = c ;
+//
+//        System.out.println(""+novo);
+//        novo = novo + 1;
+//        System.out.println(""+novo);
+//        c = (char) novo;
+//        System.out.println(c);
+        for (int i = 0; i < tamanho; i++) {
+            char caracter = vetor[i];
+            int charInt = caracter + 1;
+            stringBuilder.append((char) charInt);
+        }
+        return stringBuilder.toString();
     }
 }
