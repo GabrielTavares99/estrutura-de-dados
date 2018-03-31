@@ -14,7 +14,7 @@ public class ListaInteiros {
             puxaElementosDireita(vetor);
             vetor[0] = num;
             tamanho++;
-        }else {
+        } else {
             System.out.println("Error: lista cheia");
         }
     }
@@ -55,7 +55,7 @@ public class ListaInteiros {
         if (posicao > tamanho || posicao < 1) {
             System.out.println("Erro: posição fora do intervalo");
         } else {
-            vetor[posicao-1] = num;
+            vetor[posicao - 1] = num;
         }
     }
 
@@ -65,7 +65,7 @@ public class ListaInteiros {
             valoreRemovido = vetor[0];
             puxaElementosEsquerda(vetor);
             tamanho--;
-        }else {
+        } else {
             System.out.println("Erro: Lista vazia.");
         }
 
@@ -77,7 +77,7 @@ public class ListaInteiros {
         if (!vazia()) {
             num = vetor[tamanho - 1];
             tamanho--;
-        }else {
+        } else {
             System.out.println("ERRO! Lista Vazia");
         }
         return num;
@@ -88,10 +88,10 @@ public class ListaInteiros {
         if (posicao > tamanho || posicao < 1)
             System.out.println("Erro: posição fora do intervalo");
         else {
-            numRemovido = vetor[posicao-1];
+            numRemovido = vetor[posicao - 1];
             tamanho--;
-            for (int i = posicao-1; i < tamanho; i++){
-                vetor[i] = vetor[posicao];
+            for (int i = posicao - 1; i < tamanho; i++) {
+                vetor[i] = vetor[i + 1];
             }
         }
         return numRemovido;

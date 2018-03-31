@@ -24,14 +24,12 @@ public class ListaCaracterTest {
 //        listaCaracter.adicionaInicio('O');
 //        String conteudoConcatenado = listaCaracter.concatenarConteudo();
 //        System.out.println(conteudoConcatenado);
-        // TODO: 24/03/18 PERGUNTAR retorna -1 quando não conseguir obter valor
 //        listaCaracter.adicionaInicio('O');
 //        listaCaracter.adicionaInicio('S');
 //        listaCaracter.adicionaInicio('D');
 //        listaCaracter.adicionaInicio('O');
 //        System.out.println(String.format("%s é um palíndromo? %b", listaCaracter.concatenarConteudo(), listaCaracter.isPalindromo()));
 
-        // TODO: 25/03/18 PODE COLCOR EM POSIÇÃO QUANDO A LISTA É VAZIA?
 //        listaCaracter.adicionaInicio('G');
 //        listaCaracter.adicionaFinal('O');
 //        print();
@@ -39,10 +37,17 @@ public class ListaCaracterTest {
 //        listaCaracter.adiciona('C', 2);
 //        print();
 //        listaCaracter.remove(2);
+
         listaCaracter.adicionaInicio('a');
         listaCaracter.adicionaFinal('b');
-        String concatenarSomar = listaCaracter.concatenarSomar();
-        System.out.println(String.format("Valor trocado %s", concatenarSomar));
+        listaCaracter.adicionaFinal('c');
+        print();
+        char remove = listaCaracter.remove(2);
+//        System.out.println("Valore removido "+ remove);
+//        print();
+//        String concatenarSomar = listaCaracter.concatenarSomar();
+//
+//        System.out.println(String.format("Valor trocado %s", concatenarSomar));
         print();
 
     }

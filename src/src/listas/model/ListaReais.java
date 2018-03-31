@@ -4,8 +4,8 @@ import java.util.StringJoiner;
 
 public class ListaReais {
 
-    double[] vetor;
-    int tamanho;
+    private double[] vetor;
+    private int tamanho;
 
     public ListaReais(int tamanho) {
         this.vetor = new double[tamanho];
@@ -81,5 +81,18 @@ public class ListaReais {
             stringJoiner.add(String.valueOf(vetor[i]));
         }
         return stringJoiner.toString();
+    }
+
+    public double remove(int posicao) {
+        double valorRetorno = -1;
+        if (posicao < 1 || posicao > tamanho) {
+            System.out.println("Erro! Posição inválida");
+        } else {
+            tamanho--;
+            for (int i = posicao - 1; i < tamanho; i++) {
+                vetor[i] = vetor[i + 1];
+            }
+        }
+        return valorRetorno;
     }
 }

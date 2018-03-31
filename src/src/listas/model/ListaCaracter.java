@@ -83,15 +83,22 @@ public class ListaCaracter {
         return caracter;
     }
 
-    public int remove(int posicao) {
-        int caracterRemovido = 0;
-        if (posicao > tamanho)
+    public char remove(int posicao) {
+        char caracterRemovido = ' ';
+        if (posicao > tamanho || posicao < 1)
             System.out.println("Erro: posição fora do intervalo");
         else {
             caracterRemovido = vetor[posicao - 1];
             tamanho--;
+            arrumarPosicoes(posicao);
         }
         return caracterRemovido;
+    }
+
+    public void arrumarPosicoes(int posicao) {
+        for (int i = posicao - 1; i < tamanho; i++) {
+            vetor[i] = vetor[i + 1];
+        }
     }
 
     public int obtemPrimeiro() {
@@ -142,15 +149,7 @@ public class ListaCaracter {
     public String concatenarSomar() {
 
         StringBuilder stringBuilder = new StringBuilder();
-//        char c = 'c';
-//
-//        int novo = c ;
-//
-//        System.out.println(""+novo);
-//        novo = novo + 1;
-//        System.out.println(""+novo);
-//        c = (char) novo;
-//        System.out.println(c);
+
         for (int i = 0; i < tamanho; i++) {
             char caracter = vetor[i];
             int charInt = caracter + 1;
