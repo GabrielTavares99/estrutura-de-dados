@@ -1,14 +1,44 @@
-package listas.model;
+package listas.URI;
 
-public class ListaInteiros {
+import java.util.Scanner;
+import java.util.StringJoiner;
 
-    public int getTamanho() {
-        return tamanho;
+public class TrhowingCardsAway {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int num;
+        do {
+            num = scanner.nextInt();
+            if (num == 0)
+                continue;
+            ListaInteiros listaInteiros = new ListaInteiros(num);
+            for (int i = 1; i <= num; i++) {
+                listaInteiros.adicionaFinal(i);
+            }
+            cards(listaInteiros);
+        } while (num != 0);
     }
 
+    public static void cards(ListaInteiros listaInteiros) {
+        StringJoiner resto = new StringJoiner(", ");
+        while (listaInteiros.tamanho > 1) {
+            int removido = listaInteiros.removeInicio();
+            int initNum = listaInteiros.obtemPrimeiro();
+            listaInteiros.removeInicio();
+            listaInteiros.adicionaFinal(initNum);
+            resto.add(String.valueOf(removido));
+        }
+        System.out.println(String.format("Discarded cards: %s", resto.toString()));
+        System.out.println(String.format("Remaining card: %d", listaInteiros.obtemPrimeiro()));
+    }
+}
+
+class ListaInteiros {
+
     // TODO: 31/03/18 TAMANHO É PUBLIC?
-    protected int tamanho = 0;
-    protected int[] vetor;
+    public int tamanho = 0;
+    private int[] vetor;
 
     public ListaInteiros(int tamanho) {
         vetor = new int[tamanho];
@@ -130,3 +160,4 @@ public class ListaInteiros {
 //        return Arrays.toString(this.vetor);
     }
 }
+
