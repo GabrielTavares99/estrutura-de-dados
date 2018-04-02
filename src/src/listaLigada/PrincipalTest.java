@@ -10,6 +10,7 @@ public class PrincipalTest {
         menu.add("1 - Adiciona início");
         menu.add("2 - Remove início");
         menu.add("3 - Apresenta");
+        menu.add("4 - Remove final");
         menu.add("99 - Sair");
         ListaLigada listaLigada = new ListaLigada();
 
@@ -27,6 +28,10 @@ public class PrincipalTest {
                     break;
                 case 3:
                     System.out.println(listaLigada.toString());
+                    break;
+                case 4:
+                    int i = listaLigada.removeFinal();
+                    System.out.println(i+" ITEM REMOVIDO");
                     break;
             }
         }
