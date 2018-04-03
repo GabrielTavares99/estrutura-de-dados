@@ -11,6 +11,7 @@ public class PrincipalTest {
         menu.add("2 - Remove início");
         menu.add("3 - Apresenta");
         menu.add("4 - Remove final");
+        menu.add("5 - Adiciona ordenada");
         menu.add("99 - Sair");
         ListaLigada listaLigada = new ListaLigada();
 
@@ -21,7 +22,9 @@ public class PrincipalTest {
             opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-                    listaLigada.adicionaInicio(50);
+                    System.out.println("Digita um número aéhh");
+                    int num = scanner.nextInt();
+                    listaLigada.adicionaInicio(num);
                     break;
                 case 2:
                     listaLigada.removeInicio();
@@ -32,6 +35,11 @@ public class PrincipalTest {
                 case 4:
                     int i = listaLigada.removeFinal();
                     System.out.println(i+" ITEM REMOVIDO");
+                    break;
+                case 5:
+                    System.out.println("Digite um número");
+                    int b = scanner.nextInt();
+                    listaLigada.adicionaOrdenado(b);
                     break;
             }
         }

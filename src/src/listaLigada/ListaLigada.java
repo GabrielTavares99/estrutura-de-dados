@@ -64,4 +64,36 @@ public class ListaLigada {
     public No getInicio() {
         return this.inicio;
     }
+
+    // TODO: 02/04/18 CORRIGIR BUG primeiro 5 segundo 4
+    public void adicionaOrdenado(int num) {
+        No no = inicio;
+        No novoNo = new No(num);
+        if (no == null) {
+            inicio = new No(num);
+        } else {
+            if (no.prox == null) {
+                no.prox = novoNo;
+            } else {
+                if (no.dado > num) {
+                    No noAtual = inicio;
+                    inicio = novoNo;
+                    inicio.prox = noAtual;
+                } else {
+                    while (no.prox != null) {
+                        if (num < no.prox.dado) {
+                            No noAtualCopia = no;
+                            no.prox = novoNo;
+                            novoNo.prox = noAtualCopia.prox;
+                            return;
+                        }
+                        no = no.prox;
+                    }
+                    no.prox = novoNo;
+                }
+            }
+        }
+
+
+    }
 }

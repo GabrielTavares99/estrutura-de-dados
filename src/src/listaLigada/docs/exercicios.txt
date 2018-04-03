@@ -1,0 +1,5 @@
+1. Implemente uma classe Lista com alocação dinâmica de memória que possibilite apenas inserir
+um novo elemento(inteiro) em ordem crescente. O método remove deve receber por parâmetro o
+elemento que será excluído e retornar true se o elemento foi encontrado e retorne false caso não exista na
+lista.
+O método construtor inicializa a lista e o método toString uma String com os elementos da lista
