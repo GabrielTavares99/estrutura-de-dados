@@ -57,20 +57,15 @@ public class ListaLigada {
         return inicio == null;
     }
 
-    public void setInicio(No inicio) {
-        this.inicio = inicio;
-    }
-
-    public No getInicio() {
-        return this.inicio;
-    }
-
-    // TODO: 02/04/18 CORRIGIR BUG primeiro 5 segundo 4
     public void adicionaOrdenado(int num) {
         No no = inicio;
         No novoNo = new No(num);
         if (no == null) {
             inicio = new No(num);
+        } else if (num < no.dado) {
+            No noCorrente = inicio;
+            inicio = novoNo;
+            inicio.prox = noCorrente;
         } else {
             if (no.prox == null) {
                 no.prox = novoNo;
@@ -93,7 +88,6 @@ public class ListaLigada {
                 }
             }
         }
-
-
     }
+
 }
