@@ -90,13 +90,19 @@ public class ListaLigada {
         }
     }
 
-    public void removePorConteudo(int num){
-        No no = inicio;
-        while (no != null){
-            if (no.dado == num){
-                // TODO: 03/04/18 IMPLEMENTAR REMOVE POR CONTEÚDO
+    // TODO: 03/04/18 IMPLEMENTAR REMOVE POR CONTEÚDO
+    public void removePorConteudo(int num) {
+        No noAtual = inicio;
+        if (noAtual.dado == num) {
+            inicio = noAtual.prox;
+        } else {
+            while (noAtual.prox != null) {
+                if (noAtual.prox.dado == num) {
+                    noAtual.prox = noAtual.prox.prox;
+                    break;
+                }
+                noAtual = noAtual.prox;
             }
-            no = no.prox;
         }
     }
 

@@ -12,6 +12,7 @@ public class PrincipalTest {
         menu.add("3 - Apresenta");
         menu.add("4 - Remove final");
         menu.add("5 - Adiciona ordenada");
+        menu.add("6 - Remove por conteúdo");
         menu.add("99 - Sair");
         ListaLigada listaLigada = new ListaLigada();
 
@@ -40,6 +41,11 @@ public class PrincipalTest {
                     System.out.println("Adiciona ordenadamente:");
                     int b = scanner.nextInt();
                     listaLigada.adicionaOrdenado(b);
+                    break;
+                case 6:
+                    System.out.println("Remove por conteúdo:");
+                    int c = scanner.nextInt();
+                    listaLigada.removePorConteudo(c);
                     break;
             }
         }
