@@ -37,7 +37,7 @@ public class PrincipalTest {
                     System.out.println(i+" ITEM REMOVIDO");
                     break;
                 case 5:
-                    System.out.println("Digite um número");
+                    System.out.println("Adiciona ordenadamente:");
                     int b = scanner.nextInt();
                     listaLigada.adicionaOrdenado(b);
                     break;

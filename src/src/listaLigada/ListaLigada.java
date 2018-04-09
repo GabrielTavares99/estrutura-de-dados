@@ -90,4 +90,14 @@ public class ListaLigada {
         }
     }
 
+    public void removePorConteudo(int num){
+        No no = inicio;
+        while (no != null){
+            if (no.dado == num){
+                // TODO: 03/04/18 IMPLEMENTAR REMOVE POR CONTEÚDO
+            }
+            no = no.prox;
+        }
+    }
+
 }
